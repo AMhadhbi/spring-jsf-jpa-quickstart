@@ -1,38 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Quickstarter Java Maven Project by michelrisucci</title>
+    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Quickstarter Java Maven Project by michelrisucci</title>
   </head>
+
   <body>
-    <div class="wrapper">
+    <a id="forkme_banner" href="https://github.com/michelrisucci/spring-jsf-jpa-quickstart">View on GitHub</a>
+    <div class="shell">
+
       <header>
-        <h1>Quickstarter Java Maven Project</h1>
-        <p>Spring 4.x + JSF 2.2 + JPA 2.1</p>
-
-        <p class="view"><a href="https://github.com/michelrisucci/spring-jsf-jpa-quickstart">View the Project on GitHub <small>michelrisucci/spring-jsf-jpa-quickstart</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/michelrisucci/spring-jsf-jpa-quickstart/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/michelrisucci/spring-jsf-jpa-quickstart/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/michelrisucci/spring-jsf-jpa-quickstart">View On <strong>GitHub</strong></a></li>
-        </ul>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Quickstarter Java Maven Project</h1>
+            <h2>Spring 4.x + JSF 2.2 + JPA 2.1</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
       </header>
-      <section>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/michelrisucci/spring-jsf-jpa-quickstart/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/michelrisucci/spring-jsf-jpa-quickstart/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
         <h1>
-<a name="spring--jsf--jpa-quickstart" class="anchor" href="#spring--jsf--jpa-quickstart"><span class="octicon octicon-link"></span></a>Spring + JSF + JPA Quickstart</h1>
+<a id="spring--jsf--jpa-quickstart" class="anchor" href="#spring--jsf--jpa-quickstart" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spring + JSF + JPA Quickstart</h1>
 
 <ul>
-<li><p>Version 1.1.2.GA</p></li>
+<li><p>Version 1.2.1.GA</p></li>
 <li>
 <p>What it is: a quickstart project containing initial structure to:</p>
 
@@ -41,7 +59,7 @@
 <li>Jetty 9.2.x as Webserver;</li>
 <li>Mojarra JavaServer Faces 2.2.x as JSF implementation;</li>
 <li>Primefaces 5.x as JSF components library;</li>
-<li>Built-in MySQL Server connection for JDBC/JPA (extensible to ANY database - add specific JDBC drivers to POM if needed);
+<li>Built-in PostgreSQL and MySQL Server connection for JDBC/JPA (extensible to ANY database - add specific JDBC drivers to POM if needed);
 
 <ul>
 <li>Oracle;</li>
@@ -64,20 +82,39 @@
 
 <ul>
 <li>Checkout using Git or SVN;</li>
-<li>Configure properties over <code>src/main/webapp/WEB-INF/database</code>;</li>
+<li>Create a database over your preferred SGBD;</li>
+<li>Configure database properties over <code>src/main/webapp/WEB-INF/database</code>;</li>
 <li>Run using Maven 3.x <code>mvn clean jetty:run</code>;</li>
 </ul>
 </li>
-</ul><h1>
-<a name="whats-new" class="anchor" href="#whats-new"><span class="octicon octicon-link"></span></a>What's new</h1>
+</ul>
+
+<h1>
+<a id="whats-new" class="anchor" href="#whats-new" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's new</h1>
 
 <ul>
+<li>
+<p>Version 1.2.1.GA</p>
+
+<ul>
+<li>Added PostgreSQL 9.x JDBC 4.1 driver;</li>
+<li>Project encoding strictly defined as UTF-8;</li>
+<li>Updated Primefaces version to 5.1.</li>
+</ul>
+</li>
+<li>
+<p>Version 1.2.0.GA</p>
+
+<ul>
+<li>Full support component injection (<a href="https://github.com/Inject" class="user-mention">@Inject</a> and <a href="https://github.com/Autowired" class="user-mention">@Autowired</a>) by extending the new utility class InjectionAwareBean.</li>
+</ul>
+</li>
 <li>
 <p>Version 1.1.2.GA</p>
 
 <ul>
-<li>Change <code>index.xhtml</code> to show a <code>p:datatable</code> with mock objects;</li>
-<li>Change default Primefaces Aristo theme to Bootstrap.</li>
+<li>Changed <code>index.xhtml</code> to show a <code>p:datatable</code> with mock objects;</li>
+<li>Changed default Primefaces Aristo theme to Bootstrap.</li>
 </ul>
 </li>
 <li>
@@ -110,12 +147,21 @@
 </li>
 </ul>
       </section>
+
       <footer>
-        <p>This project is maintained by <a href="https://github.com/michelrisucci">michelrisucci</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/michelrisucci">michelrisucci</a> can be found on <a href="https://github.com/michelrisucci/spring-jsf-jpa-quickstart">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
       </footer>
+
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
     
   </body>
 </html>
